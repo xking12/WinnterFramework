@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65590df4-d888-4b2c-8de7-e36407f3d96f" name="Changes" comment="完成启动和扫描、依赖注入、Aware回调等功能">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="65590df4-d888-4b2c-8de7-e36407f3d96f" name="Changes" comment="完成启动和扫描、依赖注入、Aware回调等功能" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +21,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="6d8ae3f3-574c-4898-94e8-f60f36a72082" />
+        <option name="url" value="https://github.com/xking12/WinnterFramework.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -122,7 +125,7 @@
       <workItem from="1697422831754" duration="3709000" />
       <workItem from="1697528291523" duration="2277000" />
       <workItem from="1697530613146" duration="32000" />
-      <workItem from="1697530702451" duration="134000" />
+      <workItem from="1697530702451" duration="587000" />
     </task>
     <task id="LOCAL-00001" summary="完成启动和扫描、依赖注入、Aware回调等功能">
       <created>1697529664879</created>
@@ -138,11 +141,36 @@
       <option name="project" value="LOCAL" />
       <updated>1697530324919</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="完成启动和扫描、依赖注入、Aware回调等功能">
+      <created>1697530855352</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697530855352</updated>
+    </task>
+    <task id="LOCAL-00004" summary="完成启动和扫描、依赖注入、Aware回调等功能">
+      <created>1697530864702</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697530864702</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="完成启动和扫描、依赖注入、Aware回调等功能" />
