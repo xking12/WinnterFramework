@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65590df4-d888-4b2c-8de7-e36407f3d96f" name="Changes" comment="完成启动和扫描、依赖注入、Aware回调等功能">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/spring/BeanPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xiaoke/service/testBeanPostProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinterFramework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WinterFramework.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/ApplicationContext.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -132,7 +136,7 @@
       <workItem from="1697422831754" duration="3709000" />
       <workItem from="1697528291523" duration="2277000" />
       <workItem from="1697530613146" duration="32000" />
-      <workItem from="1697530702451" duration="776000" />
+      <workItem from="1697530702451" duration="4740000" />
     </task>
     <task id="LOCAL-00001" summary="完成启动和扫描、依赖注入、Aware回调等功能">
       <created>1697529664879</created>
@@ -169,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697531391969</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="完成启动和扫描、依赖注入、Aware回调等功能">
+      <created>1697531485368</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1697531485368</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

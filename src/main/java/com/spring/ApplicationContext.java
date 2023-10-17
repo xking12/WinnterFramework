@@ -5,6 +5,8 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -22,6 +24,7 @@ public class ApplicationContext {
 
     private ConcurrentHashMap<String,Object> singletonObjects=new ConcurrentHashMap<>();//单例池
     private ConcurrentHashMap<String,BeanDefinition> beanDefinitionMap=new ConcurrentHashMap<>();//扫描的bean的定义信息
+    private List<BeanPostProcessor> beanPostProcessorList=new ArrayList<>();//BeanPostProcessor链表
 
     public  ApplicationContext(Class configClass){
         this.configClass=configClass;
@@ -42,7 +45,9 @@ public class ApplicationContext {
     private Object createBean(String beanName,BeanDefinition beanDefinition){
         Class clazz = beanDefinition.getClazz();
         try {
+
             Object instance = clazz.getConstructor().newInstance();
+
             //依赖注入
             for (Field declaredField : clazz.getDeclaredFields()) {
                 if(declaredField.isAnnotationPresent(Autowired.class)){
@@ -56,6 +61,11 @@ public class ApplicationContext {
                 ((BeanNameAware)instance).setBeanName(beanName);
             }
 
+            //postProcessBeforeInitialization,初始化前
+            for (BeanPostProcessor beanPostProcessor : beanPostProcessorList) {
+                instance=beanPostProcessor.postProcessBeforeInitialization(instance,beanName);
+            }
+
             //Bean初始化
             if(instance instanceof InitializingBean){
                 try {
@@ -64,6 +74,12 @@ public class ApplicationContext {
                     e.printStackTrace();
                 }
             }
+
+            //postProcessAfterInitialization,初始化后
+            for (BeanPostProcessor beanPostProcessor : beanPostProcessorList) {
+                instance=beanPostProcessor.postProcessAfterInitialization(instance,beanName);
+            }
+
             return instance;
         } catch (InstantiationException e) {
             throw new RuntimeException(e);
@@ -106,6 +122,19 @@ public class ApplicationContext {
                         throw new RuntimeException(e);
                     }
                     if(aClass.isAnnotationPresent(Component.class)){
+                        //调用BeanPostProcessor
+                        if (BeanPostProcessor.class.isAssignableFrom(aClass)) {
+                            try {
+                                //创建BeanPostProcessor对象然后存入List中，
+                                // 之后创建bean对象的时候就可以从链表中拿出BeanPostProcessor进行方法调用
+                                BeanPostProcessor instance = (BeanPostProcessor) aClass.getDeclaredConstructor().newInstance();
+                                beanPostProcessorList.add(instance);
+                            }
+                            catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
+
                         //2.4 扫描的类是否加入了@Component注解,加了注解才是bean
                         //解析类，判断当前Bean是否是单例的--->BeanDefinition
                         //创建BeanDefinition
